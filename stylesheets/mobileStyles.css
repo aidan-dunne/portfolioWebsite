@@ -1,0 +1,166 @@
+/******************************************************************************
+Generic body and header styles
+******************************************************************************/
+
+body {
+	background-color: #fef0da;
+	font-family: Verdana, sans-serif;
+	margin: 0;
+	position: relative;
+	min-height: 100vh;
+}
+
+.pageHeader {
+	display: flex;
+	flex-direction: column;
+	background-image: url("../images/headerBG.png");
+	background-repeat: no-repeat;
+	background-color: #4191d8;
+	margin: 0;
+	padding: 50px 30px 50px 30px;
+}
+
+.headerBottom {
+	background-color: #4191d8;
+	height: 20px;
+	position: relative;
+	bottom: 15px;
+	z-index: 3;
+}
+
+/*
+Container section for red and gold triangles below header. This container is
+present for main section formatting purposes.
+*/
+.headerBottomContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.headerBottomRed {
+	background-color: #ff4e33;
+	height: 40px;
+	width: 80px;
+	position: relative;
+	bottom: 15px;
+	z-index: 2;
+	clip-path: polygon(0 0, 100% 0, 0 100%);
+	
+	animation-name: onloadHeaderRed;
+	animation-duration: 1.5s;
+}
+
+.headerBottomGold {
+	background-color: #ffc837;
+	height: 40px;
+	width: 160px;
+	position: relative;
+	bottom: 15px;
+	left: -80px;
+	z-index: 1;
+	clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+	
+	animation-name: onloadHeaderGold;
+	animation-duration: 1s;
+}
+
+h1 {
+	color: #fef0da;
+	font-size: 2.7rem;
+	margin: 0;
+	position: relative;
+	
+	animation-name: onloadHeader;
+	animation-duration: 1.5s;
+}
+
+/*
+h1 text and header bottom animations on page load
+*/
+@keyframes onloadHeader {
+	0% {top: -200px; color: #4191d8;}
+	33% {color: #4191d8;}
+	100% {top: 0; color: #fef0da;}
+}
+
+@keyframes onloadHeaderGold{
+	0% {left: -240px;}
+	100% {left: -80px;}
+}
+
+@keyframes onloadHeaderRed {
+	0% {left: -80px;}
+	33% {left: -80px;}
+	100% {left: 0;}
+}
+
+/******************************************************************************
+Navigation bar styles
+******************************************************************************/
+
+nav a {
+	color: #4191d8;
+	text-decoration: none;
+	font-size: 1.1rem;
+	font-weight: regular;
+}
+
+nav a:nth-child(n - 1) {
+	margin-right: 20px;
+}
+
+nav a:hover {
+	color: #fef0da;
+}
+
+nav a.currentPage {
+	color: #fef0da;
+}
+
+/******************************************************************************
+Main section styles
+******************************************************************************/
+
+main {
+	padding: 0 30px 50px 30px;
+	color: #112C53;
+}
+
+h2 {
+	font-size: 1.6rem;
+	margin: 15px 0 15px 0;
+}
+
+p {
+	font-size: 1rem;
+	font-family: Georgia, serif;
+}
+
+/******************************************************************************
+Footer styles
+******************************************************************************/
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: #fef0da;
+	font-size: .8rem;
+	background-color: #112C53;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+footer section {
+	padding: 15px;
+}
+
+/*
+Social icons section in footer hidden for readability on mobile devices
+*/
+.socialIcons {
+	display: none;
+}
