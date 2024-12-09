@@ -105,7 +105,7 @@ nav a {
 	font-weight: regular;
 }
 
-nav a:nth-child(n - 1) {
+nav a:not(:last-child) {
 	margin-right: 20px;
 }
 
@@ -128,12 +128,98 @@ main {
 
 h2 {
 	font-size: 2.2rem;
-	margin: 15px 0 15px 0;
+	margin: 15px 0 10px 0;
 }
 
 p {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	font-family: Georgia, serif;
+	margin: 10px 0 25px 0;
+}
+
+/*
+Styling for image gallery on design and art pages
+*/
+.gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-bottom: 30px;
+}
+
+.gallery figure {
+	width: 400px;
+	margin: 20px 60px 20px 0;
+}
+
+.gallery > figure > img {
+	width: 400px;
+	height: 400px;
+	margin-bottom: 10px;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+.gallery figcaption {
+	font-size: 1.1rem;
+	font-family: Georgia, serif;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+/*
+Styling for enlarged images
+*/
+
+.galleryImageHidden {
+	display: none;
+}
+
+.galleryImageLarge {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: rgba(0, 0, 0, .9);
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 4;
+	cursor: pointer;
+	
+	animation-name: enlargeFadeIn;
+	animation-duration: .75s;
+}
+
+.galleryImageLarge img {
+	max-height: 80vh;
+	max-width: 40vw;
+	min-height: 400px;
+	min-width: 400px;
+	margin-right: 15px;
+	cursor: default;
+}
+
+.galleryImageLarge section:last-child {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: #fef0da;
+	width: 400px;
+}
+
+/*
+Background fade-in animation for image enlargement
+*/
+@keyframes enlargeFadeIn {
+	0% {background-color: rgba(0, 0, 0, 0);}
+	100% {background-color: rgba(0, 0, 0, .9)}
 }
 
 /******************************************************************************

@@ -26,7 +26,74 @@
 		</section>
 	</header>
 	
-	<main></main>
+	<main>
+		<h2>Background</h2>
+		<p>DESIGN BACKGROUND INFO HERE</p>
+		<h2>Design Projects</h2>
+		<section class="gallery">
+			<figure>
+				<img src="images/design/peterStarcatcherPoster.png" id="IMAGE_d1">
+				<figcaption><span class="bold">Peter and the Starcatcher Play Promotional Poster</span><br><br>This is a poster I created for a play
+				being put on by Truman State University's theatre department.</figcaption>
+			</figure>
+			<section class='galleryImageHidden' id="_d1">
+				<img src="images/design/peterStarcatcherPoster.png">
+				<section><p><span class="bold">Peter and the Starcatcher Play Promotional Poster</span><br><br>This is a poster I created for a play
+				being put on by Truman State University's theatre department.</p></section>
+			</section>
+			
+			<figure>
+				<img src="images/design/kickstarterInsta1.png" id="IMAGE_d2">
+				<figcaption><span class="bold">Kickstarter Instagram Graphic</span><br><br>One of a series of promotional graphics and other designs I
+				created for an assignment in my Concept & Design class.</figcaption>
+			</figure>
+			<section class='galleryImageHidden' id="_d2">
+				<img src="images/design/kickstarterInsta1.png">
+				<section><p><span class="bold">Kickstarter Instagram Graphic</span><br><br>One of a series of promotional graphics and other designs I
+				created for an assignment in my Concept & Design class.</p></section>
+			</section>
+			
+			<figure>
+				<img src="images/design/kickstarterInsta2.png" id="IMAGE_d3">
+				<figcaption><span class="bold">Kickstarter Instagram Graphic</span><br><br>One of a series of promotional graphics and other designs I
+				created for an assignment in my Concept & Design class.</figcaption>
+			</figure>
+			<section class='galleryImageHidden' id="_d3">
+				<img src="images/design/kickstarterInsta2.png">
+				<section><p><span class="bold">Kickstarter Instagram Graphic</span><br><br>One of a series of promotional graphics and other designs I
+				created for an assignment in my Concept & Design class.</p></section>
+			</section>
+			
+			<figure>
+				<img src="images/design/kickstarterInsta3.png" id="IMAGE_d4">
+				<figcaption><span class="bold">Kickstarter Instagram Graphic</span><br><br>One of a series of promotional graphics and other designs I
+				created for an assignment in my Concept & Design class.</figcaption>
+			</figure>
+			<section class='galleryImageHidden' id="_d4">
+				<img src="images/design/kickstarterInsta3.png">
+				<section><p><span class="bold">Kickstarter Instagram Graphic</span><br><br>One of a series of promotional graphics and other designs I
+				created for an assignment in my Concept & Design class.</p></section>
+			</section>
+		</section>
+		
+		<script>
+			//Handling click events for enlarging/shrinking images
+			document.onclick = function(clickoffEvent) {
+				//Using target id (id of element clicked) to determine whether an image should be displayed enlarged
+				let clickLoc = clickoffEvent.target.id;
+				if (clickLoc.at(0) == "_" && document.getElementById(clickLoc).classList.contains("galleryImageLarge")) {
+					//If enlarged image transparent background clicked, hide enlarged image
+					document.getElementById(clickLoc).classList.remove("galleryImageLarge");
+					document.getElementById(clickLoc).classList.add("galleryImageHidden");
+				}
+				else if (clickLoc.at(0) == "I" && document.getElementById(clickLoc.substr(-3)).classList.contains("galleryImageHidden")) {
+					//If a gallery image is clicked, display enlarged image
+					document.getElementById(clickLoc.substr(-3)).classList.remove("galleryImageHidden");
+					document.getElementById(clickLoc.substr(-3)).classList.add("galleryImageLarge");
+				}
+			}
+		</script>
+	</main>
 	
 	<footer>
 		<section>Website created by Aidan Dunne, 2024</section>
