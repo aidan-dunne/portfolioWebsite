@@ -209,6 +209,14 @@ Styling for enlarged images
 	width: 275px;
 }
 
+/*
+Background fade-in animation for image enlargement
+*/
+@keyframes enlargeFadeIn {
+	0% {background-color: rgba(0, 0, 0, 0);}
+	100% {background-color: rgba(0, 0, 0, .9)}
+}
+
 /******************************************************************************
 Footer styles
 ******************************************************************************/
